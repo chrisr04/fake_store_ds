@@ -58,7 +58,7 @@ class MoleculesCardsScreen extends StatelessWidget {
                   'https://accessorizelondon.in/cdn/shop/files/MA-28187034001_1_59779e48-1af6-450a-a2e6-9cea78d20c85.webp?crop=center&height=2000&v=1697534365&width=2000',
               title: 'Brown Designer Bag',
               description:
-                  'Ssds skdnklsf skdns fklsndfk sknfskdf skdfnsdfsksdf ksnff ksfnsdkfs fksndfksd fsdfkdsnf',
+                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
               price: 250,
               filledButtonText: 'Añadir al carrito',
               outlinedButtonText: 'Comprar',
