@@ -64,7 +64,7 @@ La documentación completa del sistema de diseño Fake Store se divide en los si
 - **Plantillas:** Diseños de página predefinidos que organizan los organismos en una estructura coherente, como la página de inicio y la página del producto.
 - **Páginas:** Ejemplos completos de uso del sistema de diseño en aplicaciones reales, como la página de inicio de sesión y la página de búsqueda.
 
-Consulta ejemplos completos ejecutando el showcase que se encuentra dentro del proyecto
+Consulta ejemplos completos ejecutando el showcase que se encuentra dentro del proyecto.
 
 ## Como ejecutar showcase
 
@@ -99,3 +99,7 @@ Luego ejecuta el siguiente comando para levantar la aplicación, recuerda tener 
 ```
 flutter run
 ```
+
+## Demo
+
+[Video de demostración](https://drive.google.com/file/d/1Z4O390tdldahesnj3wElfevTQzjn00jR/view?usp=sharing)
