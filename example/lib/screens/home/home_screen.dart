@@ -73,6 +73,16 @@ class HomeScreen extends StatelessWidget {
                     imageHeight: 60.0,
                     titleWeight: FontWeight.w700,
                   ),
+                  const FakeSpacerS(),
+                  FakeHorizontalImageCard(
+                    onTap: () => Navigator.of(context).pushNamed(
+                      AppRoutes.pages,
+                    ),
+                    image: 'assets/images/page.png',
+                    title: 'Páginas',
+                    imageHeight: 60.0,
+                    titleWeight: FontWeight.w700,
+                  ),
                 ],
               ),
             ),

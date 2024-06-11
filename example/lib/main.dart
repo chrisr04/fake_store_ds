@@ -12,7 +12,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: fakeTheme,
+      theme: FakeTheme.light,
       routes: routes,
       initialRoute: AppRoutes.home,
     );

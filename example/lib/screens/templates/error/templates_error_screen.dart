@@ -11,11 +11,10 @@ class TemplatesErrorScreen extends StatelessWidget {
         title: 'FakeErrorTemplate',
       ),
       body: FakeErrorTemplate(
-        imagePath: 'assets/images/error-illustration.png',
-        error: 'Ha ocurrido un error inesperado',
-        description:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        buttonLabel: 'Reintentar',
+        imagePath: 'assets/images/template.png',
+        error: 'Title',
+        description: 'Description.',
+        buttonLabel: 'Click Me',
         onButtonPressed: () {},
       ),
     );

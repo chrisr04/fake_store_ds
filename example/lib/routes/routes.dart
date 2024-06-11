@@ -1,3 +1,5 @@
+import 'package:example/screens/pages/error/pages_error_screen.dart';
+import 'package:example/screens/pages/pages_screen.dart';
 import 'package:example/screens/templates/error/templates_error_screen.dart';
 import 'package:example/screens/templates/templates_screen.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +39,8 @@ class AppRoutes {
       '/organisms/bottom-navigation-bars';
   static const templates = '/templates';
   static const templatesError = '/templates/error';
+  static const pages = '/pages';
+  static const pagesError = '/pages/error';
 }
 
 final routes = <String, WidgetBuilder>{
@@ -58,4 +62,6 @@ final routes = <String, WidgetBuilder>{
       const OrganismsBottomNavigationBarsScreen(),
   AppRoutes.templates: (context) => const TemplatesScreen(),
   AppRoutes.templatesError: (context) => const TemplatesErrorScreen(),
+  AppRoutes.pages: (context) => const PagesScreen(),
+  AppRoutes.pagesError: (context) => const PagesErrorScreen(),
 };
