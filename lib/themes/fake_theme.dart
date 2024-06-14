@@ -152,4 +152,5 @@ class FakeTheme {
 extension ColorSchemeExtension on ColorScheme {
   Color get warning => FakeColorsFoundation.warningColor;
   Color get success => FakeColorsFoundation.successColor;
+  Color get shadowVariant => FakeColorsFoundation.shadowVariant;
 }

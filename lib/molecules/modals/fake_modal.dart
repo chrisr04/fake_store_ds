@@ -7,6 +7,7 @@ part 'fake_modal_success.dart';
 part 'fake_modal_error.dart';
 part 'fake_modal_warning.dart';
 part 'fake_modal_decision.dart';
+part 'fake_modal_loading.dart';
 
 /// A fake modal widget designed provides the appearance and behavior of a modal dialog.
 ///

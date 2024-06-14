@@ -122,4 +122,7 @@ class FakeColors {
 
   /// A 30% opacity black color.
   static const black30 = Color(0x4B000000);
+
+  /// A 8% opacity black color.
+  static const black8 = Color(0x13000000);
 }

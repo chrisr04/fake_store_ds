@@ -58,12 +58,19 @@ class FakeErrorPage extends StatelessWidget {
       appBar: FakeDefaultAppBar(
         title: appBarTitle,
       ),
-      body: FakeErrorTemplate(
-        imagePath: imagePath,
-        error: error,
-        description: description,
-        buttonLabel: buttonLabel,
-        onButtonPressed: onButtonPressed,
+      body: CustomScrollView(
+        slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: FakeErrorTemplate(
+              imagePath: imagePath,
+              error: error,
+              description: description,
+              buttonLabel: buttonLabel,
+              onButtonPressed: onButtonPressed,
+            ),
+          )
+        ],
       ),
     );
   }

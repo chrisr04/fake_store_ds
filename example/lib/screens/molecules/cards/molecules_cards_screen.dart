@@ -55,7 +55,7 @@ class MoleculesCardsScreen extends StatelessWidget {
               onFilledButtonPressed: () {},
               onOutlinedButtonPressed: () {},
               imageUrl:
-                  'https://accessorizelondon.in/cdn/shop/files/MA-28187034001_1_59779e48-1af6-450a-a2e6-9cea78d20c85.webp?crop=center&height=2000&v=1697534365&width=2000',
+                  'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
               title: 'Brown Designer Bag',
               description:
                   'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',

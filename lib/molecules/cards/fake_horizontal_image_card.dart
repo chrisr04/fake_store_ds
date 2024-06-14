@@ -84,6 +84,7 @@ class FakeHorizontalImageCard extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         child: Card(
+          margin: EdgeInsets.zero,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.0),
           ),

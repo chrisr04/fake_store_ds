@@ -25,6 +25,7 @@ class FakeTextFieldObscure extends StatelessWidget {
     this.onChanged,
     this.focusNode,
     this.validator,
+    this.autovalidateMode,
   });
 
   /// The controller that controls the text being edited.
@@ -42,12 +43,16 @@ class FakeTextFieldObscure extends StatelessWidget {
   /// Called during validation to determine if the input is valid.
   final String? Function(String?)? validator;
 
+  /// Used to configure the auto validation of [FormField] and [Form] widgets.
+  final AutovalidateMode? autovalidateMode;
+
   @override
   Widget build(BuildContext context) {
     return FakeTextField(
       controller: controller,
       focusNode: focusNode,
       textAlignVertical: TextAlignVertical.center,
+      autovalidateMode: autovalidateMode ?? AutovalidateMode.disabled,
       hintText: hintText,
       onChanged: onChanged,
       validator: validator,

@@ -1,5 +1,5 @@
-import 'package:fake_store_ds/foundations/foundations.dart';
 import 'package:flutter/material.dart';
+import 'package:fake_store_ds/themes/themes.dart';
 
 /// A fake bottom navigation bar.
 ///
@@ -68,12 +68,15 @@ class FakeBottomNavigationBar extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.background,
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(16.0)),
-        boxShadow: const [
+        borderRadius: const BorderRadius.vertical(
+          top: Radius.circular(18.0),
+        ),
+        boxShadow: [
           BoxShadow(
-            color: FakeColorsFoundation.bottomnNavigationShadow,
-            offset: Offset(-10.0, -10.0),
-            blurRadius: 16.0,
+            color: Theme.of(context).colorScheme.shadowVariant,
+            offset: const Offset(0.0, -1.0),
+            blurRadius: 12.0,
+            spreadRadius: 2.0,
           ),
         ],
       ),

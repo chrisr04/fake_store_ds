@@ -60,7 +60,7 @@ class FakeColorsFoundation {
   static const errorColor = FakeColors.redDark;
 
   /// The color used for content displayed on error-colored surfaces.
-  static const onErrorColor = FakeColors.redDark;
+  static const onErrorColor = FakeColors.white;
 
   /// The color of the status bar.
   static const statusBarColor = FakeColors.black10;
@@ -76,7 +76,7 @@ class FakeColorsFoundation {
   static const shadowColor = FakeColors.black30;
 
   /// The color of the shadow used in the bottom navigation bar.
-  static const bottomnNavigationShadow = FakeColors.black10;
+  static const shadowVariant = FakeColors.black8;
 
   /// The color used for subtitle text.
   static const subtitleTextColor = FakeColors.grey60;

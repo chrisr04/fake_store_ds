@@ -29,6 +29,8 @@ class FakeTextFieldSearch extends StatefulWidget {
     this.onChanged,
     this.onSubmit,
     this.hintText,
+    this.readOnly = false,
+    this.onTap,
   });
 
   /// The controller that manages the text field's text.
@@ -44,6 +46,12 @@ class FakeTextFieldSearch extends StatefulWidget {
 
   /// The hint text to be displayed when the text field is empty.
   final String? hintText;
+
+  /// Whether the fake text field is read-only.
+  final bool readOnly;
+
+  /// Callback triggered when the text field is tapped.
+  final VoidCallback? onTap;
 
   @override
   State<FakeTextFieldSearch> createState() => _FakeTextFieldSearchState();
@@ -66,6 +74,28 @@ class _FakeTextFieldSearchState extends State<FakeTextFieldSearch> {
       focusNode: _focusNode,
       textAlignVertical: TextAlignVertical.center,
       hintText: widget.hintText,
+      readOnly: widget.readOnly,
+      onTap: widget.onTap,
+      enabledBorder: widget.readOnly
+          ? const OutlineInputBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(8.0),
+              ),
+              borderSide: BorderSide(
+                color: Colors.transparent,
+              ),
+            )
+          : null,
+      focusedBorder: widget.readOnly
+          ? const OutlineInputBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(8.0),
+              ),
+              borderSide: BorderSide(
+                color: Colors.transparent,
+              ),
+            )
+          : null,
       suffixIcon: IconButton(
         onPressed: () => _onSubmit(_controller.text),
         icon: Icon(

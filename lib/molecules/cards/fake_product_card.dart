@@ -1,6 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:fake_store_ds/atoms/atoms.dart';
 import 'package:fake_store_ds/tokens/tokens.dart';
-import 'package:flutter/material.dart';
 
 /// A fake product card.
 ///
@@ -82,8 +82,10 @@ class FakeProductCard extends StatelessWidget {
       highlightColor: Colors.transparent,
       child: SizedBox(
         width: 230.0,
+        height: 320.0,
         child: Card(
-          elevation: 20.0,
+          elevation: 16.0,
+          margin: EdgeInsets.zero,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.0),
           ),
@@ -96,7 +98,7 @@ class FakeProductCard extends StatelessWidget {
                   url: imageUrl,
                   width: 230.0,
                   height: 150.0,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                 ),
               ),
               const FakeSpacerS(),
@@ -106,7 +108,7 @@ class FakeProductCard extends StatelessWidget {
                 ),
                 child: FakeTextLarge(
                   title,
-                  maxLines: 2,
+                  maxLines: 1,
                   textOverflow: TextOverflow.ellipsis,
                   weight: FontWeight.w600,
                 ),
@@ -133,6 +135,7 @@ class FakeProductCard extends StatelessWidget {
                   color: Theme.of(context).primaryColor,
                 ),
               ),
+              const Spacer(),
               Padding(
                 padding: const EdgeInsets.all(FakeSpacing.sl),
                 child: Row(
