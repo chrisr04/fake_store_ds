@@ -104,6 +104,7 @@ class FakeButton extends StatelessWidget {
               _fontSize(context) ?? FakeTypographyFoundation.fontSizeMedium,
           color: labelColor,
           fontWeight: _fontWeight,
+          textOverflow: TextOverflow.ellipsis,
         ),
       ),
     );

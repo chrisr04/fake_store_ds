@@ -76,7 +76,7 @@ class FakeHorizontalProductCard extends StatelessWidget {
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       child: SizedBox(
-        height: 155.0,
+        height: 165.0,
         child: Card(
           elevation: 16.0,
           margin: EdgeInsets.zero,
@@ -84,15 +84,18 @@ class FakeHorizontalProductCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(12.0),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(FakeSpacing.sl),
+            padding: const EdgeInsets.symmetric(
+              horizontal: FakeSpacing.sl,
+              vertical: FakeSpacing.sm,
+            ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(12.0),
+                  borderRadius: BorderRadius.circular(4.0),
                   child: FakeImageNetwork(
                     url: imageUrl,
-                    width: 120.0,
+                    width: 100.0,
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -104,8 +107,8 @@ class FakeHorizontalProductCard extends StatelessWidget {
                     children: [
                       FakeTextLarge(
                         title,
-                        weight: FontWeight.w600,
-                        maxLines: 1,
+                        weight: FontWeight.w500,
+                        maxLines: 2,
                         textOverflow: TextOverflow.ellipsis,
                       ),
                       const FakeSpacerXXS(),
@@ -132,10 +135,12 @@ class FakeHorizontalProductCard extends StatelessWidget {
                             size: FakeButtonSize.small,
                           ),
                           const FakeSpacerS(axis: FakeSpacerAxis.x),
-                          FakeButtonOutlinedPrimary(
-                            onPressed: onOutlinedButtonPressed,
-                            label: outlinedButtonText,
-                            size: FakeButtonSize.small,
+                          Flexible(
+                            child: FakeButtonOutlinedPrimary(
+                              onPressed: onOutlinedButtonPressed,
+                              label: outlinedButtonText,
+                              size: FakeButtonSize.small,
+                            ),
                           ),
                         ],
                       ),

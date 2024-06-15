@@ -88,7 +88,10 @@ class _FakeShoppingCartCardState extends State<FakeShoppingCartCard> {
           borderRadius: BorderRadius.circular(12.0),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(FakeSpacing.sl),
+          padding: const EdgeInsets.symmetric(
+            horizontal: FakeSpacing.sl,
+            vertical: FakeSpacing.sm,
+          ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -108,7 +111,7 @@ class _FakeShoppingCartCardState extends State<FakeShoppingCartCard> {
                   children: [
                     FakeTextLarge(
                       widget.title,
-                      weight: FontWeight.w600,
+                      weight: FontWeight.w500,
                       maxLines: 2,
                       textOverflow: TextOverflow.ellipsis,
                     ),
@@ -160,7 +163,7 @@ class _FakeShoppingCartCardState extends State<FakeShoppingCartCard> {
                           ),
                         ),
                         SizedBox(
-                          width: 50.0,
+                          width: 48.0,
                           child: FakeTextField(
                             controller: _controller,
                             onChanged: widget.onQuantityChanged,
