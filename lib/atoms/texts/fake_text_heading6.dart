@@ -40,7 +40,6 @@ class FakeTextHeading6 extends StatelessWidget {
   Widget build(BuildContext context) {
     final heading6 = Theme.of(context).textTheme.titleLarge;
     return FakeText(
-      key: key,
       label: label,
       fontSize: heading6?.fontSize ?? FakeTypographyFoundation.fontSizeH6,
       color: color,

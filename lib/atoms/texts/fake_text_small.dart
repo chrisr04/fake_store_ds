@@ -40,7 +40,6 @@ class FakeTextSmall extends StatelessWidget {
   Widget build(BuildContext context) {
     final small = Theme.of(context).textTheme.bodySmall;
     return FakeText(
-      key: key,
       label: label,
       fontSize: small?.fontSize ?? FakeTypographyFoundation.fontSizeSmall,
       color: color,

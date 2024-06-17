@@ -40,7 +40,6 @@ class FakeTextMedium extends StatelessWidget {
   Widget build(BuildContext context) {
     final medium = Theme.of(context).textTheme.bodyMedium;
     return FakeText(
-      key: key,
       label: label,
       fontSize: medium?.fontSize ?? FakeTypographyFoundation.fontSizeMedium,
       color: color,

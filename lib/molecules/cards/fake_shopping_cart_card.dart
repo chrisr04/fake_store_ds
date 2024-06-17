@@ -23,7 +23,6 @@ class FakeShoppingCartCard extends StatefulWidget {
     this.onRemoveButtonPressed,
     this.quantityValue,
     this.onQuantityChanged,
-    this.quantityValidator,
   });
 
   /// The URL of the image to display.
@@ -53,9 +52,6 @@ class FakeShoppingCartCard extends StatefulWidget {
   /// Callback when the quantity changes.
   final ValueChanged<String>? onQuantityChanged;
 
-  /// Validator for the quantity field.
-  final String? Function(String?)? quantityValidator;
-
   @override
   State<FakeShoppingCartCard> createState() => _FakeShoppingCartCardState();
 }
@@ -74,7 +70,9 @@ class _FakeShoppingCartCardState extends State<FakeShoppingCartCard> {
   @override
   void didUpdateWidget(covariant FakeShoppingCartCard oldWidget) {
     super.didUpdateWidget(oldWidget);
-    _controller.text = widget.quantityValue.toString();
+    if (_controller.text != widget.quantityValue.toString()) {
+      _controller.text = widget.quantityValue.toString();
+    }
   }
 
   @override
@@ -167,7 +165,6 @@ class _FakeShoppingCartCardState extends State<FakeShoppingCartCard> {
                           child: FakeTextField(
                             controller: _controller,
                             onChanged: widget.onQuantityChanged,
-                            validator: widget.quantityValidator,
                             textAlign: TextAlign.center,
                             border: InputBorder.none,
                             enabledBorder: InputBorder.none,

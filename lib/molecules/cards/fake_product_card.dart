@@ -134,7 +134,7 @@ class FakeProductCard extends StatelessWidget {
                   horizontal: FakeSpacing.sl,
                 ),
                 child: FakeTextHeading6(
-                  '\$${price.toStringAsFixed(1).replaceAll('.', ',')}',
+                  '\$${price.toStringAsFixed(2).replaceAll('.', ',')}',
                   weight: FontWeight.w700,
                 ),
               ),

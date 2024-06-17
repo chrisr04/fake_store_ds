@@ -76,6 +76,7 @@ class _FakeTextFieldSearchState extends State<FakeTextFieldSearch> {
       hintText: widget.hintText,
       readOnly: widget.readOnly,
       onTap: widget.onTap,
+      onChanged: widget.onChanged,
       enabledBorder: widget.readOnly
           ? const OutlineInputBorder(
               borderRadius: BorderRadius.all(
