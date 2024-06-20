@@ -19,26 +19,22 @@ void main() {
       () async => tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
-            body: ListView(
-              children: [
-                FakeProductCard(
-                  imageUrl: imageUrl,
-                  title: title,
-                  description: description,
-                  price: price,
-                  filledButtonText: filledButtonText,
-                  outlinedButtonText: outlinedButtonText,
-                  onTap: () {
-                    cartTapped = true;
-                  },
-                  onFilledButtonPressed: () {
-                    fillButtonPressed = true;
-                  },
-                  onOutlinedButtonPressed: () {
-                    outlinedButtonPressed = true;
-                  },
-                ),
-              ],
+            body: FakeProductCard(
+              imageUrl: imageUrl,
+              title: title,
+              description: description,
+              price: price,
+              filledButtonText: filledButtonText,
+              outlinedButtonText: outlinedButtonText,
+              onTap: () {
+                cartTapped = true;
+              },
+              onFilledButtonPressed: () {
+                fillButtonPressed = true;
+              },
+              onOutlinedButtonPressed: () {
+                outlinedButtonPressed = true;
+              },
             ),
           ),
         ),

@@ -129,16 +129,17 @@ class FakeProductCard extends StatelessWidget {
                 ),
               ),
               const FakeSpacerS(),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: FakeSpacing.sl,
-                ),
-                child: FakeTextHeading6(
-                  '\$${price.toStringAsFixed(2).replaceAll('.', ',')}',
-                  weight: FontWeight.w700,
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: FakeSpacing.sl,
+                  ),
+                  child: FakeTextHeading6(
+                    '\$${price.toStringAsFixed(2).replaceAll('.', ',')}',
+                    weight: FontWeight.w700,
+                  ),
                 ),
               ),
-              const Spacer(),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: FakeSpacing.sl,
@@ -148,17 +149,17 @@ class FakeProductCard extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    FakeButtonPrimary(
-                      onPressed: onFilledButtonPressed,
-                      label: filledButtonText,
-                      size: FakeButtonSize.small,
-                    ),
                     Flexible(
-                      child: FakeButtonOutlinedPrimary(
-                        onPressed: onOutlinedButtonPressed,
-                        label: outlinedButtonText,
+                      child: FakeButtonPrimary(
+                        onPressed: onFilledButtonPressed,
+                        label: filledButtonText,
                         size: FakeButtonSize.small,
                       ),
+                    ),
+                    FakeButtonOutlinedPrimary(
+                      onPressed: onOutlinedButtonPressed,
+                      label: outlinedButtonText,
+                      size: FakeButtonSize.small,
                     ),
                   ],
                 ),
