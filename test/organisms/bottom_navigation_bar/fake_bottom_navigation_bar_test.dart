@@ -5,7 +5,6 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   testWidgets('FakeBottomNavigationBar renders correctly',
       (WidgetTester tester) async {
-    // Create a list of NavigationDestination items for testing
     const destinations = [
       NavigationDestination(
         icon: Icon(Icons.home),

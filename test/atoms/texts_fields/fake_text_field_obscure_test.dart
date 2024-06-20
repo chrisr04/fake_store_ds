@@ -38,7 +38,6 @@ void main() {
       await tester.enterText(find.byType(TextField), 'password');
       await tester.pump();
 
-      // Assert
       final textField = tester.widget<TextField>(find.byType(TextField));
       expect(textField.obscureText, isTrue);
     });
@@ -74,12 +73,10 @@ void main() {
     });
 
     testWidgets('displays validation error', (WidgetTester tester) async {
-      // Arrange
       final controller = TextEditingController();
       const hintText = 'Enter text';
       const errorMessage = 'Invalid input';
 
-      // Act
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
@@ -96,11 +93,9 @@ void main() {
         ),
       );
 
-      // Enter invalid text into the text field
       await tester.enterText(find.byType(TextField), '');
       await tester.pump();
 
-      // Assert
       expect(find.text(errorMessage), findsOneWidget);
     });
   });

@@ -46,7 +46,6 @@ void main() {
       ),
     );
 
-    // Find the FakeSpacer widget
     final fakeSpacer =
         find.byType(SizedBox).evaluate().first.widget as SizedBox;
 

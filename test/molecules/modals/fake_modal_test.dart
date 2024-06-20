@@ -58,10 +58,8 @@ void main() {
       ),
     );
 
-    // Verify if the title text is rendered
     expect(find.text('Test Modal'), findsOneWidget);
 
-    // Verify that icon widget is not rendered
     expect(find.byIcon(Icons.info), findsNothing);
   });
 
@@ -78,10 +76,8 @@ void main() {
       ),
     );
 
-    // Verify if the title text is rendered
     expect(find.text('Test Modal'), findsOneWidget);
 
-    // Verify that bottom widget is not rendered
     expect(find.text('Bottom Widget'), findsNothing);
   });
 }
