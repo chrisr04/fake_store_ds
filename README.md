@@ -100,6 +100,59 @@ Luego ejecuta el siguiente comando para levantar la aplicación, recuerda tener 
 flutter run
 ```
 
+## Pruebas
+
+### Pruebas de widgets
+
+Las pruebas de widget verifican que los componentes de la interfaz de usuario se construyan y funcionen correctamente.
+
+### Configuración del Entorno
+
+Para ejecutar las pruebas de widgets, se requiere configurar el entorno de desarrollo con la siguiente dependencia:
+
+```bash
+flutter pub add flutter_test
+```
+
+### Ejecución de las Pruebas 
+
+Para ejecutar las pruebas de widgets, utilice el siguiente comando:
+
+```bash
+flutter test
+```
+
+## Cobertura
+
+El paquete cuenta con una cobertura del 98.6%. Si deseas ver un reporte mas detallado sigue los siguientes pasos:
+
+**Paso 1:**
+
+Genera el archivo lcov.info que contendrá la información de la cobertura del paquete
+
+```bash
+flutter test --coverage
+```
+
+**Paso 2:**
+
+Genera el html necesario para mostrar el reporte
+
+```bash
+genhtml coverage/lcov.info -o coverage/html
+```
+
+**Nota:** Antes de ejecutar este comando debes tener instalado en tu sistema `lcov`, de lo contrario no funcionará. En macOS puedes instalarlo con el comando `brew install lcov`, pero ten en cuenta que este proceso puede variar en otros sistemas operativos.
+
+**Paso 3:**
+
+Abre el reporte en el navegador
+
+```bash
+open coverage/html/index.html
+```
+
+
 ## Demo
 
 [Video de demostración](https://drive.google.com/file/d/1Z4O390tdldahesnj3wElfevTQzjn00jR/view?usp=sharing)
