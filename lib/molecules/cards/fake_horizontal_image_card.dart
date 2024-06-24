@@ -94,16 +94,20 @@ class FakeHorizontalImageCard extends StatelessWidget {
             child: Row(
               children: [
                 if (type == FakeHorizontalImageCardType.network)
-                  FakeImageNetwork(
-                    url: image,
-                    width: imageWidth,
-                    height: imageHeight,
+                  ExcludeSemantics(
+                    child: FakeImageNetwork(
+                      url: image,
+                      width: imageWidth,
+                      height: imageHeight,
+                    ),
                   )
                 else
-                  FakeImageAsset(
-                    path: image,
-                    width: imageWidth,
-                    height: imageHeight,
+                  ExcludeSemantics(
+                    child: FakeImageAsset(
+                      path: image,
+                      width: imageWidth,
+                      height: imageHeight,
+                    ),
                   ),
                 const FakeSpacerM(axis: FakeSpacerAxis.x),
                 Expanded(

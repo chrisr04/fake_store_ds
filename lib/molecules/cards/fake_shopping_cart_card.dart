@@ -23,6 +23,10 @@ class FakeShoppingCartCard extends StatefulWidget {
     this.onRemoveButtonPressed,
     this.quantityValue,
     this.onQuantityChanged,
+    this.deleteSemanticsLabel,
+    this.addSemanticsLabel,
+    this.removeSemanticsLabel,
+    this.inputSemanticsLabel,
   });
 
   /// The URL of the image to display.
@@ -51,6 +55,18 @@ class FakeShoppingCartCard extends StatefulWidget {
 
   /// Callback when the quantity changes.
   final ValueChanged<String>? onQuantityChanged;
+
+  /// Semantics label for delete button
+  final String? deleteSemanticsLabel;
+
+  /// Semantics label for add button
+  final String? addSemanticsLabel;
+
+  /// Semantics label for remove button
+  final String? removeSemanticsLabel;
+
+  /// Semantics label for quantity input
+  final String? inputSemanticsLabel;
 
   @override
   State<FakeShoppingCartCard> createState() => _FakeShoppingCartCardState();
@@ -93,12 +109,14 @@ class _FakeShoppingCartCardState extends State<FakeShoppingCartCard> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12.0),
-                child: FakeImageNetwork(
-                  url: widget.imageUrl,
-                  width: 100.0,
-                  fit: BoxFit.contain,
+              ExcludeSemantics(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12.0),
+                  child: FakeImageNetwork(
+                    url: widget.imageUrl,
+                    width: 100.0,
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
               const FakeSpacerM(axis: FakeSpacerAxis.x),
@@ -124,72 +142,90 @@ class _FakeShoppingCartCardState extends State<FakeShoppingCartCard> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        InkWell(
-                          onTap: widget.onDeleteButtonPressed,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              FakeIcon(
-                                Icons.delete_outline_rounded,
-                                size: 20.0,
-                                color: Theme.of(context).colorScheme.error,
-                              ),
-                              FakeTextMedium(
-                                widget.deleteButtonText,
-                                color: Theme.of(context).colorScheme.error,
-                                weight: FontWeight.w600,
-                              ),
-                            ],
+                        Semantics(
+                          label: widget.deleteSemanticsLabel,
+                          child: InkWell(
+                            onTap: widget.onDeleteButtonPressed,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                FakeIcon(
+                                  Icons.delete_outline_rounded,
+                                  size: 20.0,
+                                  color: Theme.of(context).colorScheme.error,
+                                ),
+                                Semantics(
+                                  excludeSemantics:
+                                      widget.deleteSemanticsLabel != null,
+                                  child: FakeTextMedium(
+                                    widget.deleteButtonText,
+                                    color: Theme.of(context).colorScheme.error,
+                                    weight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         const Spacer(),
-                        InkWell(
-                          onTap: widget.onRemoveButtonPressed,
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                              color: Theme.of(context).colorScheme.primary,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(FakeSpacing.xs),
-                              child: FakeIcon(
-                                Icons.remove,
-                                size: 20.0,
-                                color: Theme.of(context).colorScheme.onPrimary,
+                        Semantics(
+                          label: widget.removeSemanticsLabel,
+                          child: InkWell(
+                            onTap: widget.onRemoveButtonPressed,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                color: Theme.of(context).colorScheme.primary,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(FakeSpacing.xs),
+                                child: FakeIcon(
+                                  Icons.remove,
+                                  size: 20.0,
+                                  color:
+                                      Theme.of(context).colorScheme.onPrimary,
+                                ),
                               ),
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 48.0,
-                          child: FakeTextField(
-                            controller: _controller,
-                            onChanged: widget.onQuantityChanged,
-                            textAlign: TextAlign.center,
-                            border: InputBorder.none,
-                            enabledBorder: InputBorder.none,
-                            disabledBorder: InputBorder.none,
-                            errorBorder: InputBorder.none,
-                            keyboardType: TextInputType.number,
-                            focusedBorder: InputBorder.none,
-                            textInputFormatters: [
-                              FilteringTextInputFormatter.digitsOnly,
-                            ],
+                        Semantics(
+                          label: widget.inputSemanticsLabel,
+                          child: SizedBox(
+                            width: 48.0,
+                            child: FakeTextField(
+                              controller: _controller,
+                              onChanged: widget.onQuantityChanged,
+                              textAlign: TextAlign.center,
+                              border: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              disabledBorder: InputBorder.none,
+                              errorBorder: InputBorder.none,
+                              keyboardType: TextInputType.number,
+                              focusedBorder: InputBorder.none,
+                              textInputFormatters: [
+                                FilteringTextInputFormatter.digitsOnly,
+                              ],
+                            ),
                           ),
                         ),
-                        InkWell(
-                          onTap: widget.onAddButtonPressed,
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                              color: Theme.of(context).colorScheme.primary,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(FakeSpacing.xs),
-                              child: FakeIcon(
-                                Icons.add,
-                                size: 20.0,
-                                color: Theme.of(context).colorScheme.onPrimary,
+                        Semantics(
+                          label: widget.addSemanticsLabel,
+                          child: InkWell(
+                            onTap: widget.onAddButtonPressed,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                color: Theme.of(context).colorScheme.primary,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(FakeSpacing.xs),
+                                child: FakeIcon(
+                                  Icons.add,
+                                  size: 20.0,
+                                  color:
+                                      Theme.of(context).colorScheme.onPrimary,
+                                ),
                               ),
                             ),
                           ),

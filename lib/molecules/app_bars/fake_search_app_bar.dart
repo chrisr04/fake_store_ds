@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fake_store_ds/atoms/atoms.dart';
 import 'package:fake_store_ds/tokens/tokens.dart';
+import 'package:flutter/semantics.dart';
 
 /// An app bar designed for search functionality.
 ///
@@ -12,8 +13,7 @@ import 'package:fake_store_ds/tokens/tokens.dart';
 /// **Parameters:**
 /// - [showBackButton]: Determines whether to display a back button on the left side.
 /// - [readOnly]: Indicates if the search field is read-only.
-/// - [hintText]: The text displayed when the search field is empty, providing guidance
-///   or context to the user.
+/// - [hintText]: The text displayed when the search field is empty, providing guidance or context to the user.
 /// - [onChanged]: Callback function invoked when the text in the search field changes.
 /// - [onSubmit]: Callback function triggered when the user submits the search query.
 /// - [onTap]: Callback function called when the search field is tapped.
@@ -43,6 +43,11 @@ class FakeSearchAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.onSubmit,
     this.readOnly = false,
     this.onTap,
+    this.semanticLabel,
+    this.excludeSemantics = false,
+    this.semanticFocused,
+    this.semanticsSortKey,
+    this.semanticsBackSortKey,
   });
 
   final bool showBackButton;
@@ -51,6 +56,11 @@ class FakeSearchAppBar extends StatelessWidget implements PreferredSizeWidget {
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onSubmit;
   final VoidCallback? onTap;
+  final String? semanticLabel;
+  final bool excludeSemantics;
+  final SemanticsSortKey? semanticsSortKey;
+  final SemanticsSortKey? semanticsBackSortKey;
+  final bool? semanticFocused;
 
   @override
   Size get preferredSize => const Size.fromHeight(72.0);
@@ -70,14 +80,24 @@ class FakeSearchAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
             child: Row(
               children: [
-                if (showBackButton) const BackButton(),
+                if (showBackButton)
+                  Semantics(
+                    sortKey: semanticsBackSortKey,
+                    child: const BackButton(),
+                  ),
                 Expanded(
-                  child: FakeTextFieldSearch(
-                    readOnly: readOnly,
-                    hintText: hintText,
-                    onSubmit: onSubmit,
-                    onChanged: onChanged,
-                    onTap: onTap,
+                  child: Semantics(
+                    label: semanticLabel,
+                    sortKey: semanticsSortKey,
+                    focused: semanticFocused,
+                    excludeSemantics: excludeSemantics,
+                    child: FakeTextFieldSearch(
+                      readOnly: readOnly,
+                      hintText: hintText,
+                      onSubmit: onSubmit,
+                      onChanged: onChanged,
+                      onTap: onTap,
+                    ),
                   ),
                 ),
               ],

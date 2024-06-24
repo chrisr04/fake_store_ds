@@ -91,12 +91,14 @@ class FakeHorizontalProductCard extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(4.0),
-                  child: FakeImageNetwork(
-                    url: imageUrl,
-                    width: 100.0,
-                    fit: BoxFit.contain,
+                ExcludeSemantics(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(4.0),
+                    child: FakeImageNetwork(
+                      url: imageUrl,
+                      width: 100.0,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
                 const FakeSpacerM(axis: FakeSpacerAxis.x),

@@ -66,40 +66,42 @@ class FakeModal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PopScope(
-      canPop: canClose,
-      child: Dialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-        surfaceTintColor: Theme.of(context).colorScheme.background,
-        child: Padding(
-          padding: const EdgeInsets.all(FakeSpacing.md),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              if (icon != null) ...[
-                icon!,
-                const FakeSpacerS(),
-              ],
-              FakeTextHeading6(
-                title,
-                textAlign: TextAlign.center,
-              ),
-              if (description != null) ...[
-                const FakeSpacerS(),
-                FakeTextMedium(
-                  description!,
+    return BlockSemantics(
+      child: PopScope(
+        canPop: canClose,
+        child: Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          surfaceTintColor: Theme.of(context).colorScheme.background,
+          child: Padding(
+            padding: const EdgeInsets.all(FakeSpacing.md),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                if (icon != null) ...[
+                  icon!,
+                  const FakeSpacerS(),
+                ],
+                FakeTextHeading6(
+                  title,
                   textAlign: TextAlign.center,
-                  color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
+                if (description != null) ...[
+                  const FakeSpacerS(),
+                  FakeTextMedium(
+                    description!,
+                    textAlign: TextAlign.center,
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
+                  ),
+                ],
+                if (bottomWidget != null) ...[
+                  const FakeSpacerL(),
+                  bottomWidget!,
+                ],
               ],
-              if (bottomWidget != null) ...[
-                const FakeSpacerL(),
-                bottomWidget!,
-              ],
-            ],
+            ),
           ),
         ),
       ),

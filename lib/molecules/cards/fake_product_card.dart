@@ -92,13 +92,15 @@ class FakeProductCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12.0),
-                child: FakeImageNetwork(
-                  url: imageUrl,
-                  width: 230.0,
-                  height: 150.0,
-                  fit: BoxFit.contain,
+              ExcludeSemantics(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12.0),
+                  child: FakeImageNetwork(
+                    url: imageUrl,
+                    width: 230.0,
+                    height: 150.0,
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
               const FakeSpacerS(),

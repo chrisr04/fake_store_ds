@@ -24,27 +24,29 @@ class FakeModalLoading {
     return showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (context) => PopScope(
-        canPop: false,
-        child: Dialog(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.0),
-          ),
-          surfaceTintColor: Theme.of(context).colorScheme.background,
-          child: Padding(
-            padding: const EdgeInsets.all(FakeSpacing.md),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const CircularProgressIndicator(),
-                const FakeSpacerM(),
-                FakeTextLarge(
-                  loadingText ?? '',
-                  weight: FontWeight.w600,
-                  textAlign: TextAlign.center,
-                ),
-              ],
+      builder: (context) => BlockSemantics(
+        child: PopScope(
+          canPop: false,
+          child: Dialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            surfaceTintColor: Theme.of(context).colorScheme.background,
+            child: Padding(
+              padding: const EdgeInsets.all(FakeSpacing.md),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const CircularProgressIndicator(),
+                  const FakeSpacerM(),
+                  FakeTextLarge(
+                    loadingText ?? '',
+                    weight: FontWeight.w600,
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
