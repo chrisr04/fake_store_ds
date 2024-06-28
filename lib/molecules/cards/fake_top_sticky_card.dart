@@ -37,7 +37,7 @@ class FakeTopStickyCard extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: themeColors.surfaceVariant,
+        color: themeColors.surfaceContainerHighest,
         borderRadius: const BorderRadius.vertical(
           bottom: Radius.circular(25.0),
         ),

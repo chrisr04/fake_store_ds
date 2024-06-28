@@ -67,7 +67,7 @@ class FakeBottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.background,
+        color: Theme.of(context).colorScheme.surface,
         borderRadius: const BorderRadius.vertical(
           top: Radius.circular(18.0),
         ),

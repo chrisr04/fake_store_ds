@@ -70,8 +70,8 @@ void main() {
       MaterialApp(
         theme: ThemeData.light().copyWith(
           colorScheme: const ColorScheme.light(
-            background: Colors.white,
-            onBackground: Colors.black,
+            surface: Colors.white,
+            onSurface: Colors.black,
           ),
         ),
         home: Scaffold(

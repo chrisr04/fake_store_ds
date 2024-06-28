@@ -102,7 +102,7 @@ class _FakeTextFieldSearchState extends State<FakeTextFieldSearch> {
         icon: Icon(
           Icons.search,
           size: 24.0,
-          color: Theme.of(context).colorScheme.onBackground,
+          color: Theme.of(context).colorScheme.onSurface,
         ),
       ),
       onFieldSubmitted: (value) => _onSubmit(value),

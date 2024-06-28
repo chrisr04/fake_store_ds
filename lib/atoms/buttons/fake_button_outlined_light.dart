@@ -47,12 +47,12 @@ class FakeButtonOutlinedLight extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(4.0),
         side: BorderSide(
-          color: Theme.of(context).colorScheme.background,
+          color: Theme.of(context).colorScheme.surface,
           width: 1.5,
         ),
       ),
       label: label,
-      labelColor: Theme.of(context).colorScheme.background,
+      labelColor: Theme.of(context).colorScheme.surface,
     );
   }
 }

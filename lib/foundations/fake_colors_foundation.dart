@@ -35,7 +35,7 @@ class FakeColorsFoundation {
   static const onSurfaceColor = FakeColors.navy;
 
   /// The color of surface variants, providing an alternative surface color.
-  static const surfaceVariantColor = FakeColors.navy;
+  static const surfaceContainerHighest = FakeColors.navy;
 
   /// The color used for content displayed on top of surface variants.
   static const onSurfaceVariantColor = FakeColors.white;

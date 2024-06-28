@@ -21,11 +21,9 @@ class FakeTheme {
       onTertiary: FakeColorsFoundation.onTertiary,
       error: FakeColorsFoundation.errorColor,
       onError: FakeColorsFoundation.onErrorColor,
-      background: FakeColorsFoundation.backgroundColor,
-      onBackground: FakeColorsFoundation.onBackgroundColor,
       surface: FakeColorsFoundation.surfaceColor,
       onSurface: FakeColorsFoundation.onSurfaceColor,
-      surfaceVariant: FakeColorsFoundation.surfaceVariantColor,
+      surfaceContainerHighest: FakeColorsFoundation.surfaceContainerHighest,
       onSurfaceVariant: FakeColorsFoundation.onSurfaceVariantColor,
       surfaceTint: FakeColorsFoundation.surfaceColor,
       shadow: FakeColorsFoundation.shadowColor,
@@ -119,8 +117,8 @@ class FakeTheme {
     ),
     navigationBarTheme: NavigationBarThemeData(
       indicatorColor: FakeColorsFoundation.primaryColor,
-      iconTheme: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.selected)) {
+      iconTheme: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
           return const IconThemeData(
             color: FakeColorsFoundation.onPrimary,
           );
@@ -129,7 +127,7 @@ class FakeTheme {
           color: FakeColorsFoundation.textColor,
         );
       }),
-      labelTextStyle: MaterialStateProperty.all(
+      labelTextStyle: WidgetStateProperty.all(
         const TextStyle(
           fontWeight: FontWeight.w600,
           fontSize: FakeTypographyFoundation.fontSizeMedium,

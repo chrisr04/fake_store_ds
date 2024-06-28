@@ -25,11 +25,11 @@ class FakeLightAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.transparent,
-      foregroundColor: Theme.of(context).colorScheme.onBackground,
+      foregroundColor: Theme.of(context).colorScheme.onSurface,
       title: title != null
           ? FakeTextHeading6(
               title!,
-              color: Theme.of(context).colorScheme.onBackground,
+              color: Theme.of(context).colorScheme.onSurface,
             )
           : null,
     );

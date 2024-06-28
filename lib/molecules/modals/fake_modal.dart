@@ -73,7 +73,7 @@ class FakeModal extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
           ),
-          surfaceTintColor: Theme.of(context).colorScheme.background,
+          surfaceTintColor: Theme.of(context).colorScheme.surface,
           child: Padding(
             padding: const EdgeInsets.all(FakeSpacing.md),
             child: Column(

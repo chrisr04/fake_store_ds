@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fake_store_ds/tokens/tokens.dart';
 
 part 'fake_text_field_search.dart';
 part 'fake_text_field_obscure.dart';
@@ -277,7 +278,11 @@ class FakeTextField extends StatelessWidget {
         prefixIconConstraints: prefixIconConstraints,
         suffixIcon: suffixIcon,
         suffixIconConstraints: suffixIconConstraints,
-        contentPadding: contentPadding,
+        contentPadding: contentPadding ??
+            const EdgeInsets.symmetric(
+              vertical: FakeSpacing.md,
+              horizontal: FakeSpacing.sl,
+            ),
         counterText: (showCounter ?? false) ? counterText : '',
         filled: filled ?? true,
         fillColor: fillColor,

@@ -49,8 +49,8 @@ class FakeButtonLight extends StatelessWidget {
     return FakeButton(
       onPressed: onPressed,
       size: size,
-      color: Theme.of(context).colorScheme.background,
-      labelColor: Theme.of(context).colorScheme.onBackground,
+      color: Theme.of(context).colorScheme.surface,
+      labelColor: Theme.of(context).colorScheme.onSurface,
       label: label,
     );
   }

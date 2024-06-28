@@ -46,7 +46,7 @@ class FakeListTile extends StatelessWidget {
       onTap: onTap,
       splashColor: Colors.transparent,
       contentPadding: EdgeInsets.zero,
-      iconColor: themeColors.onBackground,
+      iconColor: themeColors.onSurface,
       leading: DecoratedBox(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
