@@ -65,7 +65,7 @@ class FakeTheme {
         ),
       ),
     ),
-    cardTheme: const CardTheme(
+    cardTheme: const CardThemeData(
       shadowColor: FakeColorsFoundation.shadowColor,
     ),
     textTheme: const TextTheme(
